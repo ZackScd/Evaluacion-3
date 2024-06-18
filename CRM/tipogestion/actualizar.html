@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <title>Actualizar tipo de gestión </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../js/tipogestion.js"></script>
+    <meta charset="UTF-8">
+  </head>
+
+  <body onload="obtenerIdActualizacion();">
+    <!-- Barra de navegación-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">CRM</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../tipogestion/listar.html">Tipo de gestión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../cliente/listar.html">Clientes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../usuario/listar.html">Usuarios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../resultado/listar.html">Resultados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../gestion/listar.html">Gestiones</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Fin barra-->
+    <br> 
+    <div class="container">
+      <h1>Actualizar tipo de gestión</h1>
+      <hr>
+      <!--Card-->
+      <div class="card">
+        <div class="card-header">Ingreso de tipo de gestión</div>
+        <div class="card-body">
+          <!--Formulario-->
+          <form>
+            <div class="mb-3">
+              <label for="txt_nombre_tipo_gestion" class="form-label">Nombre de tipo gestión</label>
+              <input type="text" class="form-control" id="txt_nombre_tipo_gestion" aria-describedby="nombreHelp" maxlength="45">
+            </div>
+            <input class="btn btn-primary" type="button" value="Enviar" onclick="actualizarTipoGestion();" >
+            <input type="button" class="btn btn-secondary" value="Cancelar" onclick="javascript:history.back();">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Success-->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="successModalLabel">Tipo de gestion actualizada.</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Tipo de gestion ha sido actualizada correctamente.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:history.back();">Confirmar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Modal error-->
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="errorModalLabel">Se ha producido un error.</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>No se ha podido actualizar el registro.<br>Por favor, inténtelo de nuevo y verifique que los datos sean válidos.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="javascript:history.back();">Cancelar</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Volver al Formulario</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
